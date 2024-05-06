@@ -129,9 +129,12 @@ const Welcome: FC<IWelcomeProps> = ({
   }
 
   const canChat = () => {
-    const inputLens = Object.values(inputs).length
-    const promptVariablesLens = promptConfig.prompt_variables.length
-    const emytyInput = inputLens < promptVariablesLens || Object.values(inputs).filter(v => v === '').length > 0
+    let emptyRequiredInput = false
+    promptConfig.prompt_variables.forEach((item) => {
+      if (item.required && !inputs[item.key])
+        emptyRequiredInput = true
+    })
+    const emytyInput = emptyRequiredInput
     if (emytyInput) {
       logError(t('app.errorMessage.valueOfVarRequired'))
       return false
@@ -142,7 +145,10 @@ const Welcome: FC<IWelcomeProps> = ({
   const handleChat = () => {
     if (!canChat())
       return
-
+    Object.keys(inputs).forEach((key) => {
+      if (!inputs[key])
+        delete inputs[key]
+    })
     onStartChat(inputs)
   }
 

@@ -29,14 +29,18 @@ const Header: FC<IHeaderProps> = ({
           </div>
         )
         : <div></div>}
-      <div className='flex items-center space-x-2'>
-        <AppIcon size="small" />
+      <div className="flex items-center space-x-2">
+        <img src="favicon.png" alt="logo" className="w-8 h-8"/>
+        <span className="font-bold">
+            烽火数讯
+        </span>
+        <AppIcon size="small"/>
         <div className=" text-sm text-gray-800 font-bold">{title}</div>
       </div>
       {isMobile
         ? (
-          <div className='flex items-center justify-center h-8 w-8 cursor-pointer'
-            onClick={() => onCreateNewChat?.()}
+          <div className="flex items-center justify-center h-8 w-8 cursor-pointer"
+               onClick={() => onCreateNewChat?.()}
           >
             <PencilSquareIcon className="h-4 w-4 text-gray-500" />
           </div>)
