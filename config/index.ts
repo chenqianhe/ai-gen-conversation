@@ -3,8 +3,8 @@ export const APP_ID = `${process.env.NEXT_PUBLIC_APP_ID}`
 export const API_KEY = `${process.env.NEXT_PUBLIC_APP_KEY}`
 export const API_URL = `${process.env.NEXT_PUBLIC_API_URL}`
 export const APP_INFO: AppInfo = {
-  title: `${process.env.NEXT_PUBLIC_TITLE}`,
-  description: `${process.env.NEXT_PUBLIC_DESCRIPTION}`,
+  title: 'AI Gen 文稿',
+  description: 'AI 帮助你更快地创作文稿',
   copyright: '烽火数讯 PhoeHub （内测网页，请勿外传）',
   privacy_policy: '',
   default_language: 'zh-Hans',
