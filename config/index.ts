@@ -7,7 +7,7 @@ export const APP_INFO: AppInfo = {
   description: 'AI 帮助你更快地创作文稿',
   copyright: '烽火数讯 PhoeHub （内测网页，请勿外传）',
   privacy_policy: '',
-  default_language: 'zh-Hans',
+  default_language: 'en',
 }
 
 export const isShowPrompt = false
